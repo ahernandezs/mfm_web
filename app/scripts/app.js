@@ -10,7 +10,7 @@ var app = angular.module('spaApp', [
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
-  $urlRouterProvider.otherwise("/login");
+  //$urlRouterProvider.otherwise("/login");
 
   $stateProvider
   .state('login', {
@@ -29,6 +29,12 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     templateUrl: 'views/accounts.html',
     controller: 'AccountsCtrl'
   })
+  .state('dashboard.connection', {
+    url: 'connection',
+    templateUrl: 'views/connection.html',
+    controller: 'ConnectionCtrl'
+  })
+  /*
   //view for investment bank(menu initial)
   .state('dashboard.investment',{
     url: ':account_id/investment',
@@ -54,11 +60,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     templateUrl: 'views/detailOperationPactada.html',
     controller: 'detailCreditPactedCtrl'
   })
-  .state('dashboard.connection', {
-    url: 'connection',
-    templateUrl: 'views/connection.html',
-    controller: 'ConnectionCtrl'
-  })
   .state('dashboard.authorize', {
     url: 'authorize',
     templateUrl: 'views/authorizePendingOperations.html',
@@ -81,8 +82,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.administration', {
     url: 'administration',
-/*    templateUrl: 'views/setUpNotifications.html',
-    controller: "setUpNotifications"*/
     templateUrl: 'views/user_administration.html',
     controller: 'user_administration'
   })
@@ -120,7 +119,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
    templateUrl : 'views/detailLineCredit.html',
   })
 }).factory('ctsCreditPacted', function(){
-  return {}
+  return {}*/
 }).factory('ctsBiometricas', function() {
   return {}
 });
